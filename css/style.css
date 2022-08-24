@@ -5,7 +5,7 @@
   --header-height: 80px;
 
   /* Шрифты */
-  --font-logo-raleway:"Raleway", sans-serif;
+  --font-logo-raleway: "Raleway", sans-serif;
   --font-main: "Roboto", sans-serif;
 
   /* Text Color */
@@ -19,9 +19,9 @@
   --bgd-accent-color: #2f303a;
   --activ-color-blue: #2196f3;
   --bgd-button-filter: #f5f4fa;
-  
+
   /* icon color */
-  --icon-main-color: #AFB1B8;
+  --icon-main-color: #afb1b8;
 
   /* border */
   --border-card-portfolio: #eeeeee;
@@ -32,7 +32,7 @@
 body {
   color: var(--main-color-text);
   font-family: var(--font-main);
-  padding-top: var(--header-height) ;
+  padding-top: var(--header-height);
 }
 
 h1,
@@ -91,6 +91,7 @@ img {
 .contact-footer-link:focus {
   color: var(--logo-blue-text);
 }
+/* Animation */
 
 /* header */
 .header {
@@ -104,7 +105,9 @@ img {
   background-color: var(--white-color);
   border-bottom: 1px solid #ececec;
   /* padding: 15px 0; */
-  
+
+  /* чтобы перекрывать img в разделе work */
+  z-index: 2;
 }
 
 /* logotype */
@@ -150,13 +153,17 @@ img {
 }
 
 .nav-link {
+  display: block;
   text-decoration: none;
   font-weight: 500;
 
   color: var(--titel-color-text);
   font-size: 14px;
   line-height: 1.14;
-  display: block;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* .nav-link, */
@@ -177,7 +184,7 @@ img {
 
 .contact-header-link {
   display: inline-flex;
-  align-items: center; 
+  align-items: center;
 
   color: var(--main-color-text);
   font-weight: 500;
@@ -185,13 +192,15 @@ img {
   line-height: 1.14;
 
   text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-contact {
   margin-right: 10px;
   fill: currentColor;
 }
-
 
 /* Main */
 
@@ -261,13 +270,12 @@ img {
   display: flex;
 }
 
-
 .item-features:not(:last-child) {
   margin-right: 30px;
 }
 
 .icon-container {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
@@ -304,18 +312,16 @@ img {
   justify-content: space-between;
 }
 
-.tumb{
+.tumb {
   position: relative;
+  overflow: hidden;
 }
-.label{
+.work-label {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
   letter-spacing: 0.03em;
 
   font-weight: 700;
@@ -324,7 +330,7 @@ img {
   text-transform: uppercase;
 
   color: var(--white-color);
-  background-color: rgba(47, 48, 58, 0.8);
+  background-color: rgba(33, 150, 243, 0.9);
 }
 
 .title-work,
@@ -406,8 +412,14 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
   background-color: var(--white-color);
   color: var(--icon-main-color);
+
+  transition-property: color, background-color;
+  transition-duration: 250ms, 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-network-link:hover,
@@ -441,6 +453,9 @@ img {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: var(--icon-main-color);
+  transition-property: color, border;
+  transition-duration: 250ms, 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1) ,cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-client-link:hover,
@@ -484,6 +499,10 @@ img {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .map-link {
@@ -528,6 +547,10 @@ img {
 
   color: var(--white-color);
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition-property: color, background-color;
+  transition-duration: 250ms, 250ms ;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1) ,cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -557,7 +580,7 @@ img {
 }
 
 .filter-button {
-  padding: 6px 22px ;
+  padding: 6px 22px;
   font-family: var(--font-main);
   border: none;
 
@@ -571,6 +594,9 @@ img {
 
   cursor: pointer;
   user-select: none;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms, 250ms, 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),cubic-bezier(0.4, 0, 0.2, 1),cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-button:hover,
@@ -592,10 +618,9 @@ img {
   width: calc((100% - 15 * 2) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
-  
+
   background: var(--white-color);
 }
-
 
 /* Сетка */
 .project-card:nth-child(3n) {
@@ -608,6 +633,10 @@ img {
 .project-link {
   display: block;
   text-decoration: none;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link:hover,
@@ -616,7 +645,32 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.desc-cont {
+.project-link:hover .overlay-desc,
+.project-link:focus .overlay-desc{
+  transform: translateY(0);
+}
+
+.overlay-desc{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  padding: 63px 24px;
+  transform: translateY(100%);
+
+  background-color: rgba(33, 150, 243, 0.9);
+  color: var(--white-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.555;
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1) ;
+}
+
+.project-container {
   padding: 20px 24px;
   border-left: 1px solid var(--border-card-portfolio);
   border-bottom: 1px solid var(--border-card-portfolio);
@@ -630,7 +684,7 @@ img {
   letter-spacing: 0.06em;
 }
 
-.project-desc {
+.project-label {
   margin-top: 4px;
 
   color: var(--main-color-text);
@@ -641,29 +695,33 @@ img {
 
 /* Модальное окно */
 
-.backdrop{
+.backdrop {
   position: fixed;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color:rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.backdrop.is-hidden{
+.backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+
+  /* чтобы перекрыть Header */
+  z-index: 3;
 }
 
-.modal{
+.modal {
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 528px;
-  min-height: 581px; 
+  min-height: 581px;
 
-  background-color: #FFFFFF;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
