@@ -1,5 +1,13 @@
 /* Global settings */
 :root {
+  /* header Height */
+
+  --header-height: 80px;
+
+  /* Шрифты */
+  --font-logo-raleway:"Raleway", sans-serif;
+  --font-main: "Roboto", sans-serif;
+
   /* Text Color */
   --main-color-text: #757575;
   --titel-color-text: #212121;
@@ -23,7 +31,8 @@
 
 body {
   color: var(--main-color-text);
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-main);
+  padding-top: var(--header-height) ;
 }
 
 h1,
@@ -74,27 +83,33 @@ img {
 }
 /* hover focus tab */
 
-.nav-page.list :hover,
-.nav-page.list :focus,
-.contact-header.list :hover,
-.contact-header.list :focus,
-.contact-footer.list :hover,
-.contact-footer.list :focus {
+.nav-link:hover,
+.nav-link:focus,
+.contact-header-link:hover,
+.contact-header-link:focus,
+.contact-footer-link:hover,
+.contact-footer-link:focus {
   color: var(--logo-blue-text);
 }
 
 /* header */
 .header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--header-height);
   color: var(--white-color);
+  background-color: var(--white-color);
   border-bottom: 1px solid #ececec;
-  padding: 15px 0;
-
-  outline: 2px solid khaki;
+  /* padding: 15px 0; */
+  
 }
 
 /* logotype */
 .logo {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-logo-raleway);
 
   color: var(--logo-black-text);
   letter-spacing: 0.03em;
@@ -124,7 +139,7 @@ img {
   display: flex;
 }
 
-.nav-page.list {
+.nav-page {
   display: flex;
   margin-left: 93px;
   align-items: center;
@@ -144,13 +159,13 @@ img {
   display: block;
 }
 
-.nav-link,
+/* .nav-link, */
 .contact-header-link {
   letter-spacing: 0.02em;
 }
 
 /* TOP Contacts */
-.contact-header.list {
+.contact-header {
   display: flex;
   margin-left: auto;
   align-items: center;
@@ -162,7 +177,7 @@ img {
 
 .contact-header-link {
   display: inline-flex;
-  align-items: center;
+  align-items: center; 
 
   color: var(--main-color-text);
   font-weight: 500;
@@ -225,7 +240,7 @@ img {
 
   color: var(--white-color);
   background-color: var(--activ-color-blue);
-  font-family: "Roboto";
+  font-family: var(--font-main);
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -233,6 +248,7 @@ img {
 
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  user-select: none;
 }
 
 .button:active {
@@ -286,6 +302,29 @@ img {
 .flex-work {
   display: flex;
   justify-content: space-between;
+}
+
+.tumb{
+  position: relative;
+}
+.label{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.03em;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.142;
+  text-transform: uppercase;
+
+  color: var(--white-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 .title-work,
@@ -344,8 +383,6 @@ img {
   margin-bottom: 16px;
 }
 
-
-
 .network {
   display: flex;
   justify-content: center;
@@ -357,7 +394,6 @@ img {
 /* .icon-network-item+.icon-network-item{
   margin-left: 10px ;
 } */
-
 
 .icon-network-item {
   display: inline-flex;
@@ -450,7 +486,6 @@ img {
   text-decoration: none;
 }
 
-.footer > .logo,
 .map-link {
   color: var(--white-color);
 }
@@ -523,7 +558,7 @@ img {
 
 .filter-button {
   padding: 6px 22px ;
-  font-family: "Roboto";
+  font-family: var(--font-main);
   border: none;
 
   color: var(--titel-color-text);
@@ -535,6 +570,7 @@ img {
   letter-spacing: 0.03em;
 
   cursor: pointer;
+  user-select: none;
 }
 
 .filter-button:hover,
@@ -547,7 +583,7 @@ img {
 }
 /* Project page */
 
-.projects.list {
+.projects {
   display: flex;
   flex-wrap: wrap;
 }
@@ -601,4 +637,33 @@ img {
   font-size: 16px;
   line-height: 1.85;
   letter-spacing: 0.03em;
+}
+
+/* Модальное окно */
+
+.backdrop{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 528px;
+  min-height: 581px; 
+
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
