@@ -22,7 +22,7 @@
   </head>
   <body>
     <!--Head-->
-    <header class="header">
+    <header class="page-header">
       <div class="container flex-nav">
         <nav class="nav">
           <a class="logo" href="./index.html"
@@ -67,7 +67,9 @@
     <main>
       <section class="hero-section">
         <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-        <button type="button" class="button">Замовити послугу</button>
+        <button type="button" class="button" data-open-modal="">
+          Замовити послугу
+        </button>
       </section>
       <section class="section">
         <div class="container">
@@ -607,8 +609,15 @@
         </div>
       </div>
     </footer>
-    <div class="backdrop is-hidden">
-      <div class="modal"></div>
+    <div class="backdrop is-hidden" data-backdrop>
+      <div class="modal">
+        <button type="button" class="modal-close" data-close-modal>
+          <svg class="icon-close" width="11" height="11">
+            <use href="./images/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
     </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
