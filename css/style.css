@@ -102,8 +102,6 @@ img {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 15px 0;
-  /* height: var(--header-height); */
   display: flex;
   align-items: center;
   color: var(--white-color);
@@ -144,8 +142,11 @@ img {
 
 .nav {
   display: flex;
-  padding: 0;
-  margin: 0;
+  align-items: center;
+  height: 80px;
+  padding-top:24px;
+  padding-bottom: 25px;
+
 }
 
 .nav-page {
@@ -159,7 +160,6 @@ img {
 }
 
 .nav-link {
-  display: flex;
   text-decoration: none;
   font-weight: 500;
 
@@ -183,7 +183,6 @@ img {
   left: 0;
   top: 17px;
   transform:  translateY(28px);
-
 
   background-color: var(--activ-color-blue);
   border-radius: 2px
@@ -335,7 +334,7 @@ img {
   justify-content: space-between;
 }
 
-.tumb {
+.project-tumb {
   position: relative;
   overflow: hidden;
 }
@@ -723,16 +722,22 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 3;
+
   background-color: rgba(0, 0, 0, 0.2);
 
-/* Чтобы хедер перекрыть */
-  z-index: 3;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 500ms var(--timing-fucnction),
+  visibility 500ms var(--timing-fucnction);
+
 }
 
 .is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+
 }
 
 .modal {
@@ -763,7 +768,6 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
-
   transition: border-color 250ms var(--timing-fucnction);
 
 }
