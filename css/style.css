@@ -767,6 +767,9 @@ img {
   right: 8px;
   width: 30px;
   height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
