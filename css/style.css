@@ -93,7 +93,7 @@ img {
 .contact-header-link:focus,
 .contact-footer-link:hover,
 .contact-footer-link:focus {
-  color: var(--logo-blue-text);
+  color: var(--activ-color-blue);
 }
 /* Animation */
 
@@ -144,9 +144,8 @@ img {
   display: flex;
   align-items: center;
   height: 80px;
-  padding-top:24px;
+  padding-top: 24px;
   padding-bottom: 25px;
-
 }
 
 .nav-page {
@@ -172,8 +171,9 @@ img {
   transition-timing-function: var(--timing-fucnction);
 }
 
-.current{
-    position: relative;
+.current {
+  position: relative;
+  color: var(--activ-color-blue);
 }
 .current::after {
   content: "";
@@ -182,10 +182,10 @@ img {
   position: absolute;
   left: 0;
   top: 17px;
-  transform:  translateY(28px);
+  transform: translateY(28px);
 
   background-color: var(--activ-color-blue);
-  border-radius: 2px
+  border-radius: 2px;
 }
 
 /* .nav-link, */
@@ -348,7 +348,6 @@ img {
   justify-content: center;
   align-items: center;
 
-  
   letter-spacing: 0.03em;
   font-weight: 700;
   font-size: 14px;
@@ -433,10 +432,8 @@ img {
   background-color: var(--white-color);
   color: var(--icon-main-color);
 
-  transition-property: color, background-color;
-  transition-duration: 250ms, 250ms;
-  transition-timing-function: var(--timing-fucnction),
-    var(--timing-fucnction);
+  transition: color 250ms var(--timing-fucnction),
+    background-color 250ms var(--timing-fucnction);
 }
 
 .icon-network-link:hover,
@@ -472,9 +469,9 @@ img {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: var(--icon-main-color);
-  transition-property: color, border;
-  transition-duration: 250ms, 250ms;
-  transition-timing-function:var(--timing-fucnction) ,var(--timing-fucnction);
+
+  transition: color 250ms var(--timing-fucnction),
+    border 250ms var(--timing-fucnction);
 }
 
 .icon-client-link:hover,
@@ -567,9 +564,8 @@ img {
   color: var(--white-color);
   background-color: rgba(255, 255, 255, 0.1);
 
-  transition-property: color, background-color;
-  transition-duration: 250ms, 250ms ;
-  transition-timing-function:var(--timing-fucnction) ,var(--timing-fucnction);
+  transition: color 250ms var(--timing-fucnction),
+    background-color 250ms var(--timing-fucnction);
 }
 
 .social-link:hover,
@@ -613,9 +609,9 @@ img {
 
   cursor: pointer;
   user-select: none;
-  transition-property: color, background-color, box-shadow;
-  transition-duration: 250ms, 250ms, 250ms;
-  transition-timing-function: var(--timing-fucnction),var(--timing-fucnction),var(--timing-fucnction);
+  transition: color 250ms var(--timing-fucnction),
+    background-color 250ms var(--timing-fucnction),
+    box-shadow 250ms var(--timing-fucnction);
 }
 
 .filter-btn:hover,
@@ -666,11 +662,11 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.overlay-desc{
+.overlay-desc {
   position: absolute;
   bottom: 0;
   left: 0;
-  width:100%;
+  width: 100%;
   height: 100%;
   padding: 63px 24px;
   transform: translateY(100%);
@@ -683,11 +679,11 @@ img {
 
   transition-property: transform;
   transition-duration: 250ms;
-  transition-timing-function:var(--timing-fucnction);
+  transition-timing-function: var(--timing-fucnction);
 }
 
 .project-link:hover .overlay-desc,
-.project-link:focus .overlay-desc{
+.project-link:focus .overlay-desc {
   transform: translateY(0);
 }
 
@@ -729,15 +725,13 @@ img {
   visibility: visible;
   opacity: 1;
   transition: opacity 450ms var(--timing-fucnction),
-  visibility 450ms var(--timing-fucnction);
-
+    visibility 450ms var(--timing-fucnction);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-
 }
 
 .modal {
@@ -753,15 +747,14 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-
   transition: transform 450ms var(--timing-fucnction);
 }
 
-.backdrop.is-hidden .modal{
-    transform: translate(-50%, -100%) scale(0.3);
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -100%) scale(0.3);
 }
 
-.modal-close{
+.modal-close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -771,18 +764,17 @@ img {
   align-items: center;
   justify-content: center;
 
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
   transition: border-color 250ms var(--timing-fucnction);
-
 }
 
-.modal-close:hover{
+.modal-close:hover {
   border-color: var(--activ-color-blue);
 }
 
-.icon-close{
+.icon-close {
   fill: #000;
 }
